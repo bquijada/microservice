@@ -11,8 +11,6 @@ context = zmq.Context()
 socket = context.socket(zmq.REP)
 socket.bind("tcp://*:5545")
 
-print("Connected to server")
-
 auth_key = "daa3f4d8-0bb7-0fb2-4f7d-21f9e4acc196:fx"
 translator = deepl.Translator(auth_key)
 
