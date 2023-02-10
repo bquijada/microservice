@@ -5,7 +5,6 @@
 
 import deepl
 import zmq
-import json
 
 context = zmq.Context()
 socket = context.socket(zmq.REP)
@@ -17,12 +16,11 @@ translator = deepl.Translator(auth_key)
 languages = {"French": "FR", "German": "DE", "Spanish": "ES", "Danish": 'DA', "Italian": "IT"}
 
 while True:
-    message = socket.recv_json()
-    dictionary = json.loads(message)
+    dictionary = socket.recv_json()
     content = dictionary.get("text")
     selected_lang = dictionary.get("lang")
     abrev = languages.get(selected_lang)
     result = translator.translate_text(content, target_lang=abrev)
     print("translation to " + selected_lang + ":")
     print(result.text)
-    socket.send_string(result.text)
+    socket.send_json({'text': result.text})

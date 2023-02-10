@@ -21,8 +21,8 @@ socket.send_json(json_object)
 How to receive Data: 
 
 Once the client has sent a request by sending the json object containing language and text to the server, the server 
-will send back a response as a string. This string will be the translated text. The code to receive this text 
-will be: 
+will send back a response as a json object with one property, "text". The value will be the translated text. The code
+on the client side to receive this text will be: 
 
-result = socket.recv_string()
+result = socket.recv_json()
 
