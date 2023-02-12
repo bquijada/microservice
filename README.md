@@ -1,7 +1,6 @@
-# microservice
-Translation Microservice:
+# CS 361 Microservice: Translator Program
 
-How to request Data: 
+<h3>How to request Data:</h3>
 
 First the client must connect to the server socket. This can be done with the following code:
 
@@ -18,7 +17,7 @@ print("Original text: " + dictionary.get("text"))
 json_object = json.dumps(dictionary)
 socket.send_json(json_object)
 
-How to receive Data: 
+<h3>How to receive Data:</h3> 
 
 Once the client has sent a request by sending the json object containing language and text to the server, the server 
 will send back a response as a json object with one property, "text". The value will be the translated text. The code
