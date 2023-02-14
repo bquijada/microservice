@@ -25,3 +25,6 @@ on the client side to receive this text will be:
 
 result = socket.recv_json()
 
+<h3>Sequence Diagram:</h3> 
+
+![Alt text](sequence_diagram.png)
