@@ -1,5 +1,7 @@
 # CS 361 Microservice: Translator Program
 
+Welcome to the DeepL Translation micro-service! This is a Python micro-service that translates a given text from English into another language using the DeepL API. The micro-service will communicate with a main program to receive a text to translate and return the translated text by using sockets.
+
 <h3>How to request Data:</h3>
 
 First the client must connect to the server socket. This can be done with the following code:
